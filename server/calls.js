@@ -46,3 +46,12 @@ export const getAuthorsCall = async () => {
         return error;
     }
 }
+
+export const getBooksGenreCall = async () => {
+    try {
+        const res = await axios.post('/api/get-books-genre/');
+        return res;
+    } catch (error) {
+        return error;
+    }
+}

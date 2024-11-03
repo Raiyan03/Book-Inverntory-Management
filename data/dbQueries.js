@@ -61,3 +61,12 @@ export const GetAuthors = async () => {
         console.error("Error fetching authors:", error);
     }
 }
+
+export const GetGenres = async () => {
+    try {
+        const res = sql`SELECT DISTINCT genre FROM INVENTORY`;
+        return res;
+    } catch (error) {
+        console.error("Error fetching genres:", error);
+    }
+}

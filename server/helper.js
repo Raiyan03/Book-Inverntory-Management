@@ -59,3 +59,13 @@ export const getAuthors = async (req) => {
         return NextResponse.json({ error: 'Something wen wrong', details: error.message }, { status: 500 });
     }
 }
+
+export const getBooksGenre = async (req) => {
+    try {
+        const {rows} = await GetGenres();
+        return NextResponse.json({ success: 'Books genre fetched successfully', data: rows });
+    } catch (error) {
+        console.error("Error fetching books genre:", error);
+        return NextResponse.json({ error: 'Something wen wrong', details: error.message }, { status: 500 });
+    }
+}
