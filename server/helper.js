@@ -36,3 +36,16 @@ export const deleteBook = async (req) => {
         return NextResponse.json({ error: 'Something wen wrong', details: error.message }, { status: 500 });
     }
 }
+
+export const getFilteredBooks = async (req) => {
+    try {
+        const { searchElement, genre, author } = await req.json();
+        console.log("Search Element:", searchElement);
+        const res  = await SearchBooks(genre, author, searchElement);
+        console.log("Books found successfully:", res?.rows || []);
+        return NextResponse.json({ success: 'Books found successfully', data: res.rows || [] });
+    } catch (error) {
+        console.error("Error searching books:", error);
+        return NextResponse.json({ error: 'Something wen wrong', details: error.message }, { status: 500 });
+    }
+}

@@ -27,3 +27,13 @@ export const deleteBookCall = async (entry_id) => {
         return error;
     }
 }
+
+export const getFilteredBooksCall = async (search) => {
+    try {
+        console.log(search);
+        const res = await axios.post('/api/get-filtered-books/', search);
+        return res;
+    } catch (error) {
+        return error;
+    }
+}

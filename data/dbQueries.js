@@ -30,3 +30,25 @@ export const DeleteBook = async (entry_id) => {
         console.error("Error deleting book:", error);
     }
 }
+
+export const SearchBooks = async (genres, authors, searchElement) => {
+    try {
+        // Only trigger search if input length is more than 3 characters
+        console.log("Search Element:", searchElement);
+        if (searchElement.length > 3) {
+            const searchQuery = searchElement + '%'; // Match only starting characters
+            const query = sql`
+                SELECT * FROM INVENTORY
+                WHERE title ILIKE ${searchQuery}
+                OR author ILIKE ${searchQuery}
+                OR genre ILIKE ${searchQuery}
+            `;
+            const res = await query;
+            return res;
+        } else {
+            return []; // Return empty array if input length is less than or equal to 3
+        }
+    } catch (error) {
+        console.error("Error searching books:", error);
+    }
+}
