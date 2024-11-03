@@ -18,3 +18,12 @@ export const editBookCall = async (book) => {
         return error;
     }
 }
+
+export const deleteBookCall = async (entry_id) => {
+    try {
+        const res = await axios.post('/api/delete-book/', { entry_id });
+        return res;
+    } catch (error) {
+        return error;
+    }
+}

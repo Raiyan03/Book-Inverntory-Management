@@ -24,3 +24,15 @@ export const editBook = async (req) => {
         return NextResponse.json({ error: 'Something wen wrong', details: error.message }, { status: 500 });
     }
 }
+
+export const deleteBook = async (req) => { 
+    try {
+        const { entry_id } = await req.json();
+
+        const res = await DeleteBook(entry_id);
+        return NextResponse.json({ success: 'Book deleted successfully' });
+    } catch (error) {
+        console.error("Error deleting book:", error);
+        return NextResponse.json({ error: 'Something wen wrong', details: error.message }, { status: 500 });
+    }
+}

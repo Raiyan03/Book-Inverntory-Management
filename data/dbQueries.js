@@ -21,3 +21,12 @@ export const UpdateBookDetails = async (entry_id, title, author, genre, publicat
         console.error("Error updating book details:", error);
     }
 }
+
+export const DeleteBook = async (entry_id) => {
+    try {
+        const res = sql`DELETE FROM INVENTORY WHERE entry_id = ${entry_id}`;
+        return res;
+    } catch (error) {
+        console.error("Error deleting book:", error);
+    }
+}
