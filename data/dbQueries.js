@@ -9,3 +9,15 @@ export const InsertNewBool = async ( title, author, genre, publication_date, isb
         console.error("Error adding new book:", error);
     }
 }
+
+export const UpdateBookDetails = async (entry_id, title, author, genre, publication_date, isbn, stock) => {
+    try {
+        const res = sql`UPDATE INVENTORY 
+                        SET title = ${title}, author = ${author}, genre = ${genre}, 
+                            publication_date = ${publication_date}, isbn = ${isbn}, stock = ${stock}
+                        WHERE entry_id = ${entry_id}`;
+        return res;
+    } catch (error) {
+        console.error("Error updating book details:", error);
+    }
+}

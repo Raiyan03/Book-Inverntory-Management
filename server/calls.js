@@ -9,3 +9,12 @@ export const addNewBookCall = async (book) => {
         return error;
     }
 }
+
+export const editBookCall = async (book) => {
+    try{
+        const res = await axios.post('/api/edit-book/', book);
+        return res;
+    } catch (error) {
+        return error;
+    }
+}
