@@ -52,3 +52,12 @@ export const SearchBooks = async (genres, authors, searchElement) => {
         console.error("Error searching books:", error);
     }
 }
+
+export const GetAuthors = async () => {
+    try {
+        const res = sql`SELECT DISTINCT author FROM INVENTORY`;
+        return res;
+    } catch (error) {
+        console.error("Error fetching authors:", error);
+    }
+}

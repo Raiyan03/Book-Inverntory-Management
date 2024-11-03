@@ -37,3 +37,12 @@ export const getFilteredBooksCall = async (search) => {
         return error;
     }
 }
+
+export const getAuthorsCall = async () => { 
+    try {
+        const res = await axios.post('/api/get-authors/');
+        return res;
+    } catch (error) {
+        return error;
+    }
+}
