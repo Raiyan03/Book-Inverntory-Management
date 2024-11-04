@@ -46,6 +46,16 @@ export const deleteBookCall = async (entry_id) => {
     }
 };
 
+export const getBooksCall = async () => {
+    const value = "value"; // This is a dummy value
+    try {
+        const res = await axios.post('/api/get-books/', {value});
+        return res;
+    } catch (error) {
+        return error;
+    }
+}
+
 /**
  * Sends a request to retrieve a list of books filtered by specified criteria.
  * 
