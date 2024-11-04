@@ -47,7 +47,7 @@ In this quickstart, you'll set up the `book-inventory` application locally and c
 1. **Clone the Repository**  
    Clone the repository to your local machine using:
    ```bash
-   https://github.com/Raiyan03/book-inventory.git
+   git clone https://github.com/Raiyan03/book-inventory.git
    ```
 
 2. **Navigate to the Project Directory**  
