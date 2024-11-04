@@ -19,3 +19,44 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --sub-background: teal;
+  --foreground: #171717;
+  --accent-borders: rgb(221, 210, 210);
+  --input-background: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --accent-borders: gray;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  accent-color: var(--sub-background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.poppins {
+  font-family: var(--font-poppins);
+}
+
+.custom-scrollbar {
+  /* Firefox */
+  scrollbar-width: thin;
+}
