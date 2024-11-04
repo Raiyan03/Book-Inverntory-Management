@@ -8,6 +8,40 @@ import { CiFilter } from "react-icons/ci";
 import FilterModal from "./filter";
 import AddBookModal from "./addBookModal"; // Import the new AddBookModal component
 
+/**
+ * @component Navbar
+ * @description
+ * A functional component that serves as the navigation bar for the Book Station application. 
+ * It allows users to search for books, apply filters, and add new books through modals. 
+ * The navbar displays the application logo and provides a responsive interface for various actions.
+ *
+ * @param {Object} props - The properties passed to the Navbar component.
+ * @param {Function} props.setBooks - Function to update the list of books.
+ * @param {string} props.searchInput - The current search input value.
+ * @param {Function} props.setSearchInput - Function to update the search input value.
+ * @param {Array} props.selectedGenre - The currently selected genres.
+ * @param {Function} props.setSelectedGenre - Function to update the selected genres.
+ * @param {Array} props.authorFilter - The current author filters applied.
+ * @param {Function} props.setAuthorFilter - Function to update the author filters.
+ * @param {string} props.authorName - The current author name input.
+ * @param {Function} props.setAuthorName - Function to update the author name input.
+ *
+ * @returns {JSX.Element} A navbar element containing search input, filter options, and a button to add new books.
+ *
+ * @example
+ * <Navbar 
+ *     setBooks={setBooks} 
+ *     searchInput={searchInput} 
+ *     setSearchInput={setSearchInput} 
+ *     selectedGenre={selectedGenre} 
+ *     setSelectedGenre={setSelectedGenre} 
+ *     authorFilter={authorFilter} 
+ *     setAuthorFilter={setAuthorFilter} 
+ *     authorName={authorName} 
+ *     setAuthorName={setAuthorName} 
+ * />
+ */
+
 const Navbar = ({ 
     setBooks, 
     searchInput,

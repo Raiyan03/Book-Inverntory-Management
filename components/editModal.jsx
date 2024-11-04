@@ -2,6 +2,34 @@ import { validateBook } from "@/lib/validations";
 import React, { useState, useEffect } from "react";
 import ErrorMessage from "./errorMessage";
 
+/**
+ * EditModal Component
+ *
+ * @description
+ * This component renders a modal for editing the details of a book. It displays input fields
+ * populated with the book's current information, allowing the user to update values such as
+ * title, author, genre, ISBN, stock, and publication date. Upon saving, the updated book details
+ * are validated and passed to a parent component's save function.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {Object} props.book - The book object containing current details to be edited.
+ * @param {boolean} props.isOpen - Controls the visibility of the edit modal.
+ * @param {function} props.onClose - Callback function to close the modal without saving changes.
+ * @param {function} props.onSave - Callback function to save the updated book details.
+ *
+ * @component
+ *
+ * @example
+ * <EditModal 
+ *    book={selectedBook} 
+ *    isOpen={isEditModalOpen} 
+ *    onClose={handleCloseEditModal} 
+ *    onSave={handleSaveBook} 
+ * />
+ *
+ * @returns {JSX.Element|null} The rendered EditModal if `isOpen` is true, otherwise null.
+ */
+
 const EditModal = ({ book, isOpen, onClose, onSave }) => {
     const formatDate = (date) => {
         const d = new Date(date);

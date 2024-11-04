@@ -6,18 +6,39 @@ import { getAuthorsCall, getBooksGenreCall } from "@/server/calls";
 
 /**
  * @component FilterModal
- * @description This functional component represents a modal for filtering books by genre and author.
+ * @description
+ * A modal component that allows users to filter books by genre and author.
+ * It provides dropdowns for selecting genres and inputs for filtering authors, 
+ * with options to apply, clear, and manage selected filters.
  *
  * @param {boolean} isOpen - Determines whether the modal is open or closed.
  * @param {function} onClose - Function to close the modal.
- * @param {function} onApplyFilters - Function to apply the selected filters.
- * @param {array} selectedGenre - Holds the array of currently selected genres.
- * @param {function} handleGenreChange - Function to update the selected genre.
- * @param {string} authorFilter - Holds the author filter input value.
- * @param {function} handleAuthorChange - Function to update the author filter input.
+ * @param {function} clearFilters - Function to reset all selected filters.
+ * @param {array} selectedGenre - Array of currently selected genres.
+ * @param {function} handleGenreChange - Function to update the selected genres.
+ * @param {string} authorName - Current input value for the author filter.
+ * @param {array} authorFilter - Array of currently selected authors for filtering.
+ * @param {function} handleAuthorChange - Function to update selected authors.
+ * @param {function} handleAuthor - Function to update author input.
  * @param {function} removeGenre - Function to remove a selected genre.
+ * @param {function} removeAuthor - Function to remove a selected author.
  *
- * @returns {JSX.Element} A JSX element that renders the filter modal.
+ * @returns {JSX.Element|null} Renders the filter modal with genre and author options, or null if not open.
+ *
+ * @example
+ * <FilterModal
+ *     isOpen={isFilterModalOpen}
+ *     onClose={closeModal}
+ *     clearFilters={resetFilters}
+ *     selectedGenre={selectedGenres}
+ *     handleGenreChange={updateGenre}
+ *     authorName={currentAuthorName}
+ *     authorFilter={selectedAuthors}
+ *     handleAuthorChange={updateAuthor}
+ *     handleAuthor={setAuthorInput}
+ *     removeGenre={removeSelectedGenre}
+ *     removeAuthor={removeSelectedAuthor}
+ * />
  */
 const FilterModal = ({
     isOpen,

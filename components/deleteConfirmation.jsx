@@ -1,5 +1,30 @@
 import React from "react";
 
+/**
+ * DeleteConfirmation Component
+ * 
+ * @description
+ * This component renders a confirmation modal for deleting a book. When open, 
+ * it displays a prompt asking the user to confirm the deletion, with options 
+ * to either proceed with deletion or cancel the action.
+ * 
+ * @param {Object} props - The properties passed to the component.
+ * @param {boolean} props.isOpen - Controls the visibility of the delete confirmation modal.
+ * @param {function} props.onClose - Callback function to close the modal without deleting.
+ * @param {function} props.onDelete - Callback function to confirm deletion and trigger the delete action.
+ * 
+ * @component
+ * 
+ * @example
+ * <DeleteConfirmation 
+ *    isOpen={isDeletePopupOpen} 
+ *    onClose={handleCloseDeletePopup} 
+ *    onDelete={handleDeleteBook} 
+ * />
+ * 
+ * @returns {JSX.Element|null} The rendered DeleteConfirmation modal if `isOpen` is true, otherwise null.
+ */
+
 const DeleteConfirmation = ({ isOpen, onClose, onDelete }) => {
     if (!isOpen) return null; // If popup is not open, don't render anything
 

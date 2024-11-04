@@ -1,6 +1,26 @@
 import React from "react";
 import { IoWarningOutline } from "react-icons/io5";
 
+/**
+ * ErrorMessage Component
+ *
+ * @description
+ * This component displays an error message with a warning icon, styled to alert the user
+ * to any error or validation issue. It is conditionally rendered, only appearing if a `message`
+ * is provided.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} props.message - The error message to display. If no message is provided,
+ *                                  the component will not render.
+ *
+ * @component
+ *
+ * @example
+ * <ErrorMessage message="Please fill in all required fields." />
+ *
+ * @returns {JSX.Element|null} A styled error message element if `message` is present, otherwise null.
+ */
+
 const ErrorMessage = ({ message }) => {
     if (!message) return null;
 

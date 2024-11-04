@@ -4,6 +4,38 @@ import { useState } from "react";
 import { validateBook } from "@/lib/validations";
 import ErrorMessage from "@/components/errorMessage";
 import { addNewBookCall } from "@/server/calls";
+
+/**
+ * AddBookModal Component
+ * 
+ * @description
+ * This component renders a modal form to add a new book to the system. 
+ * The modal collects details such as the book's title, author, genre, 
+ * publication date, ISBN, and stock count. Form validation is performed
+ * before submission, and any errors are displayed to the user.
+ * 
+ * @param {Object} props - The properties passed to the component.
+ * @param {boolean} props.isOpen - Controls the modal's visibility.
+ * @param {function} props.onClose - Callback function to close the modal.
+ * 
+ * @component
+ * 
+ * @example
+ * <AddBookModal 
+ *    isOpen={isModalOpen} 
+ *    onClose={handleCloseModal} 
+ * />
+ * 
+ * @requires
+ * - react-icons/ai (for close icon)
+ * - react (for useState hook)
+ * - validateBook from "@/lib/validations" (for form validation)
+ * - ErrorMessage component from "@/components/errorMessage" (for error display)
+ * - addNewBookCall from "@/server/calls" (to send form data to the server)
+ * 
+ * @returns {JSX.Element|null} The rendered modal component if isOpen is true, otherwise null.
+ */
+
 const AddBookModal = ({ isOpen, onClose }) => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');

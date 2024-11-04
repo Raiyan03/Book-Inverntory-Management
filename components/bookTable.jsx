@@ -7,6 +7,39 @@ import EditModal from "./editModal";
 import DeleteConfirmation from "./deleteConfirmation";
 import { deleteBookCall, editBookCall } from "@/server/calls";
 
+/**
+ * BookTable Component
+ * 
+ * @description
+ * This component displays a table of books with functionality to search, edit, delete, and export book entries.
+ * Users can filter the displayed books using a search input, and interact with each book entry to edit or delete it.
+ * The component also provides an export option for downloading the book list in various formats.
+ * 
+ * @param {Object} props - The properties passed to the component.
+ * @param {Array<Object>} props.books - Array of book objects to display in the table.
+ * @param {function} props.setBooks - Function to update the list of books in the parent component.
+ * 
+ * @component
+ * 
+ * @example
+ * <BookTable 
+ *    books={bookList} 
+ *    setBooks={updateBookList} 
+ * />
+ * 
+ * @requires
+ * - react (for useState, useEffect, useRef hooks)
+ * - react-icons/fi (for edit icon)
+ * - react-icons/md (for delete icon)
+ * - Export component (for export dropdown)
+ * - EditModal component (for editing books)
+ * - DeleteConfirmation component (for confirming deletion)
+ * - downLoadFile from "@/lib/utils" (for handling file downloads)
+ * - deleteBookCall, editBookCall from "@/server/calls" (for server interactions)
+ * 
+ * @returns {JSX.Element} The rendered BookTable component.
+ */
+
 const BookTable = ({ books, setBooks }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [isExportDropdownOpen, setIsExportDropdownOpen] = useState(false);

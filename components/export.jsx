@@ -1,5 +1,26 @@
 import { CiExport } from "react-icons/ci"
 
+/**
+ * Export Component
+ *
+ * @description
+ * This component provides a dropdown menu for exporting data in various formats.
+ * It includes options for JSON and CSV formats, with each option triggering the `handleExport`
+ * function passed in as a prop when clicked.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {Function} props.handleExport - Callback function to handle the export action. 
+ *                                         It accepts a string parameter representing the file type 
+ *                                         to export ("json" or "csv").
+ *
+ * @component
+ *
+ * @example
+ * <Export handleExport={(type) => exportData(type)} />
+ *
+ * @returns {JSX.Element} A dropdown menu with export options.
+ */
+
 const Export = ({handleExport}) => {
 
     return (

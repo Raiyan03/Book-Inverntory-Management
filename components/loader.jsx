@@ -1,3 +1,18 @@
+
+/**
+ * @component Loader
+ * @description
+ * A functional component that displays a loading spinner. 
+ * It uses an SVG for the spinner animation and includes 
+ * an accessible label for screen readers to indicate that 
+ * content is loading.
+ *
+ * @returns {JSX.Element} A loading spinner element with an accessible loading message.
+ *
+ * @example
+ * <Loader />
+ */
+
 const Loader = () => {
     return ( 
     <div role="status">
