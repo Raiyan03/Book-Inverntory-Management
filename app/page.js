@@ -2,14 +2,36 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
-import axios from "axios";
 import BookTable from "@/components/bookTable";
 import Loader from "@/components/loader";
-import { deleteBookCall, getBooksCall, getFilteredBooksCall } from "@/server/calls";
-import { getFilteredBooks } from "@/server/helper";
+import { getBooksCall, getFilteredBooksCall } from "@/server/calls";
+
+/**
+ * @component MainPage
+ * @description
+ * The MainPage component serves as the root page for the book management application.
+ * It handles the fetching, filtering, and displaying of books based on user input.
+ * The component includes a navigation bar for searching and filtering books by genre and author.
+ * It utilizes the Loader component to show a loading spinner while data is being fetched.
+ *
+ * @returns {JSX.Element} The rendered MainPage component which includes a Navbar and a BookTable or a no books found message.
+ *
+ * @example
+ * <MainPage />
+ *
+ * @hooks
+ * - useEffect: For fetching book data from the server on initial render and when search or filter criteria change.
+ * 
+ * @state
+ * - data: Holds the fetched book data.
+ * - loading: Boolean to manage loading state during data fetching.
+ * - search: Stores the current search input for filtering books.
+ * - selectedGenre: An array of selected genres for filtering books.
+ * - authorFilter: An array of selected authors for filtering books.
+ * - authorName: The current input for the author's name filter.
+ */
+
 function MainPage() {
-  // Fetch data from the database
-  // const { rows } = await sql`SELECT * FROM INVENTORY`;
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
